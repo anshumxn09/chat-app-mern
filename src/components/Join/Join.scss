@@ -1,49 +1,149 @@
-.joinContainer{
-    background-color: rgb(54, 51, 51);
-    width: 100vw;
-    height: 100vh;
+@mixin flex{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.joinContainer{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background : #191414;
+    overflow: hidden;
+}
+
+.joinContainer::before{
+    content : "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70%;
+    background : url("https://images.pexels.com/photos/745045/pexels-photo-745045.jpeg?cs=srgb&dl=pexels-helena-lopes-745045.jpg&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: scaleX(1.6) translateY(-40px);
+    z-index: 1;
+}
+
 .joinCenterBox{
-    border: 1px solid white;
-    width: 50%;
+    position: relative;
+    border-top: 4px solid black;
+    width: 60%;
     height: 50%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 20px;
-    gap: 15px;
+    background-color: white;
+    z-index: 2;
+    overflow: hidden;
 }
 
-.joinCenterBox > h1{
-    color: white;
+.wavy{
+    position: absolute;
+    width: 100%;
+    bottom: -12px;
+}
+.appName{
+    color: black;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
-#joinInput{
+.appIcon{
+    font-size: 20px;
+}
+
+.liner{
+    font-style: italic;
+    font-size: 15px;
+    color: gray;
+}
+
+.inputBlock{
     width: 70%;
+    @include flex();
+    position: relative;
+}
+
+.inputHolder{
+    position: absolute;
+    overflow-x: visible;
+    top: 28px;
+    left: 10px;
+    font-size: 15px;
+    transition: all 0.3s ;
+}
+
+#joinInput:valid ~ .inputHolder, #joinInput:focus ~ .inputHolder{
+    top: 10px;
+    background: black;
+    color: white;
+    padding: 0px 2px;
+    border-radius: 5px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+#joinInput{
+    margin-top: 20px;
+    width: 100%;
     height: 40px;
-    border: none;
+    border: 1px solid black;
     outline: none;
     font-size: 20px;
     border-radius: 10px;
     padding: 0px 8px;
 }
 
+.joinButton::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: -1;
+    transition: all 0.3s;
+}
 .joinButton{
+    position: relative;
     width: max-content;
-    padding: 2px 8px;
-    height: 40px;
+    margin-top: 20px;
+    padding: 7px 20px;
     text-transform: uppercase;
     border-radius: 20px;
-    border : 2px solid white;
+    border : 1px solid black;
     background-color: transparent;
-    color: white;
+    color: black;
     letter-spacing: 2px;
     cursor: pointer;
+    transition: all 0.3s ;
+    overflow: hidden;
+}
+
+.joinButton:hover{
+    color: white;
+}
+.joinButton:hover::before{
+    height: 100%;
+}
+
+
+@media screen and (max-width : 610px) {
+    .joinCenterBox{
+        width: 90%;
+    }
+    .inputBlock{
+        width: 80%;
+    }
 }
