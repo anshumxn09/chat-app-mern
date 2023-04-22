@@ -1,5 +1,5 @@
-.chatPage{
-    background-color: rgb(31, 29, 29);
+.chatPage {
+    background-color: #191414;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -7,52 +7,32 @@
     align-items: center;
 }
 
-.chatContainer{
+.chatContainer {
     background-color: white;
-    height: 60%;
-    width: 50%;
+    height: 80%;
+    width: 80%;
 }
 
-.header{
-    background-color: crimson;
-    height: 15%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+.header {
+    background-color: #191414;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header>h2{
-    font-size: 1.5vmax;
-    color: white;
-    margin: 2.5vmax;
+.chatBox {
+    height: 80%;
+    box-sizing: border-box;
 }
 
-.header img{
-    
-    margin: 2.5vmax;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-.header>img:hover{
-    transform: scale(1.2);
-}
-
-
-.chatBox{
-
- height: 70%;
- box-sizing: border-box;
-}
-
-.inputBox{
-    
-    height: 15%;
+.inputBox {
+    height: 40px;
     box-sizing: border-box;
     display: flex;
 }
 
-#chatInput{
-   
+#chatInput {
     width: 80%;
     border: none;
     padding: 0px 2vmax;
@@ -60,13 +40,13 @@
     background-color: white;
     outline: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2vmax;
+    font-size: 14px;
     border-top: 0.2vmax solid rgba(41, 41, 41, 0.562);
 }
 
 
-.sendBtn{
-    background-color: crimson;
+.sendBtn {
+    background-color: #191414;
     color: white;
     border: none;
     width: 21%;
@@ -74,14 +54,16 @@
     cursor: pointer;
 }
 
-.sendBtn>img{
+.sendBtn>img {
     width: 2.6vmax;
-    filter:brightness(100);
+    filter: brightness(100);
     transition: all 0.3s;
 }
-.sendBtn:hover{
+
+.sendBtn:hover {
     background-color: rgb(156, 13, 42);
-} 
-.sendBtn:hover img{
+}
+
+.sendBtn:hover img {
     transform: translateX(10px);
 }

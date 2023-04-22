@@ -4,6 +4,7 @@ import socketIO from "socket.io-client";
 import "./Chat.scss";
 import Message from '../Messages/Messages';
 import ReactScroll from 'react-scroll-to-bottom';
+import {SendOutlined} from '@ant-design/icons';
 
 let socket;
 
@@ -67,7 +68,9 @@ const Chat = () => {
   return (
     <div className="chatPage">
         <div className="chatContainer">
-            <div className="header"></div>
+            <div className="header">
+                <h3 className='appName' style={{color : "white"}}>Pop Ups</h3>
+            </div>
             <ReactScroll className="chatBox">
                 {
                     messages && messages.map((elem) => {
@@ -77,7 +80,7 @@ const Chat = () => {
             </ReactScroll> 
             <div className="inputBox">
                 <input type="text" id='chatInput' />
-                <button className='sendBtn' onClick={sendMessage}> send </button>
+                <button className='sendBtn' onClick={sendMessage}> <SendOutlined style={{fontSize : "25px"}} /> </button>
             </div>
         </div>
     </div>
